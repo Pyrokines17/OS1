@@ -1,0 +1,73 @@
+#!/bin/bash
+
+gcc *.c -o prog
+
+ln prog myMkdir
+./myMkdir dir
+
+echo "--------"
+
+ln prog myLs
+./myLs ./
+
+echo "--------"
+
+ln prog myRmdir
+./myRmdir dir
+
+ln prog myTouch
+./myTouch ex
+
+ls
+
+echo "--------"
+
+echo "qwe" >> ex
+
+ln prog myCat
+./myCat ex
+
+echo "--------"
+
+ln prog myRm
+./myRm ex
+
+ls
+
+echo "--------"
+
+ln prog myLnS
+./myLnS main.c myLinkS
+
+ls
+
+echo "--------"
+
+ln prog myCatLnS
+./myCatLnS linkS
+
+echo "--------"
+
+ln prog myLn
+./myLn main.c myLink
+
+ls -l
+
+echo "--------"
+
+ln prog myStat
+./myStat main.c
+
+echo "--------"
+
+ln prog myChmod 
+./myChmod myLink 111
+
+ls -l
+
+echo "--------"
+
+./myChmod myLink 666
+
+rm my*
+rm prog
