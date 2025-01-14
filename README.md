@@ -1,1 +1,1 @@
-# OS1
+# Repository for OS labs (part 1)
