@@ -1,5 +1,3 @@
-# Межпроцессорное взаимодействие
-
 ```c
 	   pipe() creates a pipe, a unidirectional data channel that can be
        used for interprocess communication.  The array pipefd is used to
@@ -58,4 +56,3 @@
               watch and filters can also be applied to select which
               subevents should be placed into the pipe.
 ```
-

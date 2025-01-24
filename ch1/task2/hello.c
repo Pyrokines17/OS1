@@ -1,4 +1,4 @@
-#include "../2/staticLib.h"
+#include "staticLib.h"
 
 int main(void) {
 	hello_from_static_lib();

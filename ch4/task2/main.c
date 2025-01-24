@@ -7,7 +7,7 @@
 
 #define error 1
 
-int main(int main, char** argv) {
+int main(int argc, char** argv) {
   printf("pid -- %d\n", getpid());
   sleep(1);
 

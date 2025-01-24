@@ -1,32 +1,18 @@
-Компиляция, сборка, запуск
+`gcc` - GNU project C and C++ compiler
+`nm` - list symbols from object files
+`ldd` - print shared object dependencies
+`ar` - create, modify, and extract from archives
 
-1. Написать программу hello.c, которая выводит фразу “Hello world”:
-a. получить исполняемый файл;
-b. посмотреть unresolved symbols (puts, printf) с помощью nm;
-c. посмотреть зависимости (ldd);
-d. запустить.
-
-2. Написать статическую библиотеку с функцией hello_from_static_lib() и
-использовать ее в hello.c:
-a. посмотреть исполняемый файл на предмет того будет ли функция
-hello_from_static_lib() unresolved. Почему?
-b. где находится код этой функции?
-
-3. Написать динамическую библиотеку с функцией hello_from_dynamic_lib() и
-использовать ее с hello.c:
-a. посмотреть состояние функции hello_from_dynamic_lib в получившимся
-исполняемом файле. Объяснить увиденное.
-
-4. Написать динамическую библиотеку с функцией hello_from_dyn_runtime_lib() и
-загрузить ее в hello.c с помощью dlopen(3). Объяснить что происходит.
+`"U" The symbol is undefined`
 
 Команды:
+`gcc -c *.c` -- создание объектных файлов
+`ar -rcs <libname.a> *.o` -- создание статической библиотеки
 
-gcc -c ./source/*.c
-ar -r libmy1.a *.o
+При использовании статической библиотеки её код будет перемещён в итоговую программу
 
-gcc -c -fPIC ./source/*.c
-gcc -shared -o libmy2.so *.o
+`gcc -c -fPIC *.c` -- создание объектного файла для динамической библиотеки
+`gcc -shared -o <libname.so> *.o` -- создание динамической библиотеки
 
-gcc -o project *.o -L../library -lmy1
-gcc -o project *.o -L../library -lmy2 -Wl,-rpath,../library/
+При использовании динамической библиотеки в итоговой программе будет механизм, ссылающийся на код в динамической библиотеке 
+
